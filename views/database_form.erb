@@ -1,0 +1,25 @@
+<p>Choose a database and we'll mysqldump it.</p>
+<form action='/databases/backup/' method='POST'>
+	<select name='database'>
+		<% @backups.each do |db| %>
+			<option value='<%= db.get_id()  %>'><%= db.get_name() %></option>
+		<% end %>
+	</select>
+	<input type='submit'>
+</form>
+
+<table>
+	<thead>
+		<tr>
+			<th>Name</th><th>Last Backup</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @backups.each do |backup| %>
+		<tr>
+			<td><%= backup.get_name() %></td><td><%= backup.get_backup_url_link() %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+		
