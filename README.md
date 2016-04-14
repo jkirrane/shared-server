@@ -1,6 +1,6 @@
 # TiF Shared Server
 
-This is a Sinatra server that may be deployed on the Think it First shared local server. The initial purpose of the server is to act as a simple way to initiate dumps and ddownloads of MySQL databases. 
+This is a Sinatra server that may be deployed on the Think it First shared local server. The initial purpose of the server is to act as a simple way to initiate dumps and downloads of MySQL databases. 
 
 ## Getting Started
 
@@ -17,7 +17,7 @@ gem install sinatra
 
 DataMapper SQLite Adapter
 ```
-gem instal dm-sqlite-adapter
+gem instaLl dm-sqlite-adapter
 ```
 
 DataMapper
