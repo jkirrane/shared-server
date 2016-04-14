@@ -1,6 +1,7 @@
 # ignore database files and backups
 *.db
 *.sql
+*.sh
 
 # ignore the actual config file that stores database connection strings
 /config/config.rb
