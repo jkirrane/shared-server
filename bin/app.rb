@@ -9,6 +9,7 @@ set :port, 8080
 set :static, true
 set :public_folder, "static"
 set :views, "views"
+set :bind, "0.0.0.0"
 
 def check_if_in_backups(database, backups)
 	backups.each do |backup|
@@ -33,6 +34,10 @@ get '/databases/' do
 	@backups = []
 	backs.each do |back|
 		new_backup = Backup.new(back)
+		puts './backups/'+new_backup.get_name() + '.sql'
+		if File.exists?('./backups/'+new_backup.get_name() + '.sql')
+			new_backup.set_backup_time = File.ctime("./backups/"+new_backup.get_name() + '.sql')
+		end
 		@backups.push(new_backup)
 	end
 	get_databases = "mysqlshow -u #{$DB_USER} -p#{$DB_PASS}"

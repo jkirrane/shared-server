@@ -31,4 +31,9 @@ class Backup
 			return ""
 		end
 	end
+
+	def set_backup_time=(time)
+		@last_backup=time
+	end
+		
 end
